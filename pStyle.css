@@ -9,6 +9,9 @@ body{
     background-color: blanchedalmond;
     overflow-x: hidden;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 .header{
     background-color:rgba(16, 15, 16, 0.731);
@@ -98,10 +101,10 @@ body{
     display:flex;
     margin: 20px 0px;
     padding: 24px 10px 18px;
-    background: linear-gradient(#616161 0%, #333 10%,#222);
+    /* background: linear-gradient(#616161 0%, #333 10%,#222); */
     border-radius: 8px;
     overflow: hidden;
-    border: 2px solid #000;
+    /* border: 2px solid #000; */
     transition: 0.5s;
 }
 .containerSk:hover .skills{
@@ -112,7 +115,7 @@ body{
     transform: scale(1.2);
 }
 
-.containerSk .skills:before{
+/* .containerSk .skills:before{
     content:'';
     position: absolute;
     top:0;
@@ -121,11 +124,12 @@ body{
     height:50%;
     background: rgba(255,255,255,0.1);
     z-index:10;
-}
+} */
+
 .containerSk .skills .Name{
     position: relative;
     width:110px;
-    text-align:right;
+    text-align:left;
     color:#fff;
     margin-top: -2px;
     text-transform: uppercase;
@@ -164,6 +168,7 @@ body{
         width:0%;
     }
 }
+
 .containerSk .skills:nth-child(2) .Percent .progress{
     background: linear-gradient(45deg,#1fe6ff,#673ab7);
 }
@@ -179,6 +184,12 @@ body{
 .containerSk .skills:nth-child(6) .Percent .progress{
     background: linear-gradient(45deg,#3cfff1,#c5070b);
 }
+@media (max-width: 768px) {
+    .containerSk{
+        width:500px;
+        margin: 8%;
+    }
+}
 
 /* ...............................For Contact Page...................... */
 #Contact{
@@ -193,20 +204,21 @@ body{
 #Contact::before{
     content:'';
     position: absolute;
+    overflow: auto;
     width: 400px;
     height:400px;
     background: linear-gradient(#2196f3,#e91e63);
     border-radius:50%;
-    transform: translate(-400px,-130px);
+    transform: translate(-470px,-200px);
 }
 #Contact::after{
     content:'';
     position: absolute;
-    width: 350px;
-    height:350px;
+    width: 400px;
+    height:400px;
     background: linear-gradient(#2196f3,#83d8ff);
     border-radius:50%;
-    transform: translate(420px,160px);
+    transform: translate(470px,200px);
 }
 
 .containerCon{
@@ -329,11 +341,15 @@ body{
 }
 
 @media (max-width: 768px) {
-    section::before{
-        transform: translate(-180px,-100px);
+    #Contact::before{
+        width: 200px; 
+        height:200px;
+        transform: translate(-300px,-240px);
     }
-    section::after{
-        transform: translate(200px,167px);
+    #Contact::after{
+        width: 200px; 
+        height:200px;
+        transform: translate(250px,240px);
     }
     .containerCon{
         padding: 20px;
@@ -342,6 +358,9 @@ body{
         font-size: 28px;
     }
 }
+@media (max-width: 1080px) {
+
+}
 
 /* .....................................Scroll Bar.............................. */
 ::-webkit-scrollbar{
@@ -349,10 +368,9 @@ body{
     background: #000;
 }
 ::-webkit-scrollbar-thumb{
-    background: linear-gradient(transparent, #46ed20);
+    background: linear-gradient(#333a31,white, #333a31);
     border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover{
-    background: linear-gradient(transparent, #e50c9d);
     width:20px;
 }
