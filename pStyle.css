@@ -6,7 +6,8 @@
 }
 
 body{
-    color: white;
+    background-color: blanchedalmond;
+    overflow-x: hidden;
 }
 
 .header{
@@ -20,26 +21,20 @@ body{
         padding: 1px 23px;
 }
 
-.left{  
+.logo{  
     /* border: 2px solid blue; */
     display: inline-block;
     position: absolute;
     top: 14px;
     left: 30px;
-}
-.left img{
-    width:35px;
-    filter: invert(100%);
-    margin-left: 25px;
-}
-.left div{
     text-align: center;
     line-height: 1.3em;
 }
 
 .mid{
     /* border: 2px solid blue; */
-    display: block;
+    display: flex;
+    flex-direction: row;
     width: 60%;
     margin: -16px -20px 200px -20px; 
     height: 42px;  
@@ -49,7 +44,7 @@ body{
     list-style: none;
     display: inline-block;
     font-family: 'Baloo Bhai 2', cursive;
-    padding-right: 5px;    
+    padding-right: 5px;   
 }
 
 .navbar li a{
@@ -64,3 +59,197 @@ body{
     color:aqua
 }
 
+.container {
+    border: 2px solid red;
+    max-width: 1140px;
+    margin: auto;
+}
+.home .full-screen{
+    min-height: 100vh;
+    width:100%;
+
+}
+.home .home-content{
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* ...............................For Contact Page...................... */
+#contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    width: 100%;
+    background: #001923;
+}
+#contact::before{
+    content:'';
+    position: absolute;
+    width: 400px;
+    height:400px;
+    background: linear-gradient(#2196f3,#e91e63);
+    border-radius:50%;
+    transform: translate(-400px,-130px);
+}
+#contact::after{
+    content:'';
+    position: absolute;
+    width: 350px;
+    height:350px;
+    background: linear-gradient(#2196f3,#83d8ff);
+    border-radius:50%;
+    transform: translate(420px,160px);
+}
+
+.containerCon{
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    max-width: 1000px;
+    padding: 50px;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-right: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-radius:10px;
+    overflow: hidden;
+    backdrop-filter:blur(25px);
+}
+.containerCon::before{
+    content:'';
+    position: absolute;
+    left: -40%;
+    width: 100%;
+    height:100%;
+    background: rgba(255,255,255,0.05);
+    pointer-events: none;
+    transform: skewX(-15deg);
+}
+.containerCon h2{
+    width:100%;
+    text-align:center;
+    color:#fff;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+.containerCon .row100{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+}
+.containerCon .row100 .col{
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    margin: 30px 0 20px;
+}
+.containerCon .row100 .col .inputBox{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    color: #fff;
+}
+.containerCon .row100 .col .inputBox input,
+.containerCon .row100 .col .inputBox textarea{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border:none;
+    outline:none;
+    font-size: 15px;
+    padding: 0 10px;
+    z-index: 1;
+    color: #fff;
+    color: #000;
+}
+.containerCon .row100 .col .inputBox .text{
+    position: absolute;
+    top:0;
+    left: 0;
+    line-height:40px;
+    font-size: 16px;
+    padding: 0px 10px;
+    display: block;
+    transition: 0.5s;
+    pointer-events: none;
+}
+.containerCon .row100 .col .inputBox input:focus + .text,
+.containerCon .row100 .col .inputBox input:valid + .text,
+.containerCon .row100 .col .inputBox textarea:focus + .text,
+.containerCon .row100 .col .inputBox textarea:valid + .text{
+    top:-35px;
+    left: -10px;
+}
+.containerCon .row100 .col .inputBox .line{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height:2px;
+    background: #fff;
+    border-radius: 2px;
+    display: block;
+    transition: 0.5s;
+    pointer-events: none;
+}
+.containerCon .row100 .col .inputBox input:focus ~ .line,
+.containerCon .row100 .col .inputBox input:valid ~ .line{
+    height:100%;
+}
+.containerCon .row100 .col .inputBox .textarea{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding:10px 0; 
+}
+.containerCon .row100 .col .inputBox textarea:focus ~ .line,
+.containerCon .row100 .col .inputBox textarea:valid ~ .line{
+    height:100%;
+}
+.containerCon .row100 .col input[type="submit"]{
+    border: none;
+    padding: 10px 40px;
+    cursor: pointer;
+    outline: none;
+    background: #fff;
+    color:#000;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius:2px;
+}
+
+@media (max-width: 768px) {
+    section::before{
+        transform: translate(-180px,-100px);
+    }
+    section::after{
+        transform: translate(200px,167px);
+    }
+    .containerCon{
+        padding: 20px;
+    }
+    .containerCon h2{
+        font-size: 28px;
+    }
+}
+
+/* .....................................Scroll Bar.............................. */
+::-webkit-scrollbar{
+    width: 12px;
+    background: #000;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(transparent, #46ed20);
+    border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(transparent, #e50c9d);
+    width:20px;
+}
