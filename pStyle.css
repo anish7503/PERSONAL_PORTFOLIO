@@ -6,7 +6,7 @@
 }
 
 body{
-    background-color: blanchedalmond;
+    background: #001923;
     overflow-x: hidden;
 }
 html{
@@ -18,6 +18,7 @@ html{
     margin: 37px 10px 20px 200px;
     border-radius:60px;
     height: 42px;
+    z-index:1;
 }
 
 .navbar{
@@ -66,6 +67,7 @@ html{
     border: 2px solid red;
     max-width: 1140px;
     margin: auto;
+
 }
 .home .full-screen{
     min-height: 100vh;
@@ -85,7 +87,7 @@ html{
     justify-content: right;
     align-items: center;
     min-height: 100vh;
-    background: #2e2e2e;
+    background: #001923;
 }
 
 .containerSk{
@@ -101,10 +103,8 @@ html{
     display:flex;
     margin: 20px 0px;
     padding: 24px 10px 18px;
-    /* background: linear-gradient(#616161 0%, #333 10%,#222); */
     border-radius: 8px;
     overflow: hidden;
-    /* border: 2px solid #000; */
     transition: 0.5s;
 }
 .containerSk:hover .skills{
@@ -114,17 +114,6 @@ html{
     opacity:1;
     transform: scale(1.2);
 }
-
-/* .containerSk .skills:before{
-    content:'';
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:50%;
-    background: rgba(255,255,255,0.1);
-    z-index:10;
-} */
 
 .containerSk .skills .Name{
     position: relative;
@@ -344,12 +333,12 @@ html{
     #Contact::before{
         width: 200px; 
         height:200px;
-        transform: translate(-300px,-240px);
+        transform: translate(-150px,-240px);
     }
     #Contact::after{
         width: 200px; 
         height:200px;
-        transform: translate(250px,240px);
+        transform: translate(150px,240px);
     }
     .containerCon{
         padding: 20px;
@@ -358,19 +347,95 @@ html{
         font-size: 28px;
     }
 }
-@media (max-width: 1080px) {
-
+/* .....................................Footer.................................... */
+.footer{
+    position : fixed;
+    display:flex;
+    flex-direction: column;
+    z-index:-1;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
+    background: #262626;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    justify-content: center;
+    align-items: center;
 }
+.name{
+    font-size:2em;
+    padding-bottom:10px;
+}
+.sociallogo{
+    position: relative;
+    display: flex;
+}
+.sociallogo li{
+    position: relative;
+    list-style: none;
+    margin:0 20px;
+    cursor: pointer;
+}
+.sociallogo li a{
+    text-decoration: none;
+}
+.sociallogo li a i{
+    font-size:3em;
+    color: #fff;
+}
+.sociallogo li::before{
+    font-family: fontAwesome;
+    position: absolute;
+    top:0;
+    left: 0;
+    font-size:3em;
+    height:0;
+    overflow: hidden;
+    transition:0.5s ease-in-out;
+}
+.sociallogo li:nth-child(1):before{
+    content:'\f0e1';
+    color: #2196f3;
+    border-bottom: 4px solid #2196f3;
+    padding-bottom: -2px;
+    pointer-events: none;
+}
+.sociallogo li:nth-child(2):before{
+    content:'\f232';
+    color: #25d366;
+    border-bottom: 4px solid #25d366;
+    padding-bottom: -2px;
+    pointer-events: none;
+}
+.sociallogo li:nth-child(3):before{
+    content:'\f16d';
+    color: #e1306c;
+    border-bottom: 4px solid #e1306c;
+    padding-bottom: -2px;
+    pointer-events: none;
+}
+.sociallogo li:nth-child(4):before{
+    content:'\f09b';
+    color: #171515;
+    border-bottom: 4px solid #171515;
+    padding-bottom: -2px;
+    pointer-events: none;
+}
+.sociallogo li:hover::before{
+    height:100%;
+}
+.Contact{
+    margin-bottom:300px;
+}
+
 
 /* .....................................Scroll Bar.............................. */
 ::-webkit-scrollbar{
-    width: 12px;
+    width: 15px;
     background: #000;
 }
 ::-webkit-scrollbar-thumb{
     background: linear-gradient(#333a31,white, #333a31);
     border-radius: 6px;
-}
-::-webkit-scrollbar-thumb:hover{
-    width:20px;
 }
