@@ -24,6 +24,7 @@ html{
 }
 .header{
     position:fixed;
+    background-color: #151515;
     top: 0;
     left: 0;
     width: 100%;
@@ -31,7 +32,7 @@ html{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 10;
+    z-index: 10000;
 }
 
 .header .logo {
@@ -52,7 +53,7 @@ html{
 }
 .header ul li a{
     display: inline-block;
-    color: #000;
+    color: #fff;
     font-weight: 400;
     font-size:1.1em;
     margin-left: 10px;
@@ -73,6 +74,78 @@ html{
 }
 .content .mytext h2{
     color:#000;
+    font-size:2em;
+    margin-bottom: 10px;
+    line-height: 1.2em;
+    font-weight: 400;
+}
+.content .mytext h1{
+    color:red;
+    font-size:3em;
+    margin-bottom: 10px;
+    line-height: 1em;
+    font-weight: 600;
+}
+.content .mytext p{
+    font-size: 1.2em;
+    max-width:600px;
+    color: #333;
+}
+.content .mytext a{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background:#ff5e8e;
+    color:#fff;
+    font-size: 1.2em;
+    border-radius: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+} 
+
+.pic{
+    position:absolute;
+    bottom:5%;
+    right:10%;
+    max-width:400px;
+}
+
+/* To make it responsive */
+@media(max-width:768px){
+    #home{
+        padding:20px;
+    }
+    .header{
+        padding:20px;
+    }
+    header .navbar{
+        display:none;
+        z-index: -10;
+    }
+    .pic{
+        left:0;
+        bottom:0;
+        opacity:0.6;
+    }
+    .header .toggle{
+        position:fixed;
+        top:20px;
+        right:20px;
+        width:40px;
+        height:40px;
+        background:#0169b2 url(menu.jpg) no-repeat;
+        background-size: 30px;
+        background-position: center;
+        cursor: pointer;
+        border-radius: 2px;
+        z-index: 10;
+    }
+    .toggle .active{
+        background:red url(close.jpg) no-repeat;
+        background-size: 25px;
+        background-position: center;
+    }
 }
 
 
@@ -202,7 +275,7 @@ html{
     height:400px;
     background: linear-gradient(#2196f3,#83d8ff);
     border-radius:50%;
-    transform: translate(470px,200px);
+    transform: translate(470px,125px);
 }
 
 .containerCon{
