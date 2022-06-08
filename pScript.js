@@ -1,6 +1,6 @@
 // For toggle
-let menutoggle = document.querySelector("#toggle");
-let active = document.querySelector(".active");
+let menutoggle = document.querySelector("toggle");
+let active = document.querySelector("active");
 
 menutoggle.addEventListener('click', function(){
     if(menutoggle.firstChild.classList.contains('fa-bars')){
