@@ -2,7 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'Baloo Bhai 2', cursive;
+    font-family: 'Baloo Bhai 2', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode' sans-serif;
 }
 
 body{
@@ -20,11 +20,11 @@ html{
     padding: 100px;display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: #fff;
+    background-color: #000;
 }
 .header{
     position:fixed;
-    background-color: #151515;
+    background-color: #fff;
     top: 0;
     left: 0;
     width: 100%;
@@ -37,23 +37,29 @@ html{
 
 .header .logo {
     position: relative;
-    color:#1fe6ff;
+    color:#000;
     display: inline-block;
     font-size:1.5em;
     text-decoration: none;
     font-weight: 600;
 
 }
+header .logo span{
+    color:#1fe6ff;
+}
 .header ul{
     position: relative;
     display:flex;
+}
+.header i{
+    display:none;
 }
 .header ul li{
     list-style: none;
 }
 .header ul li a{
     display: inline-block;
-    color: #fff;
+    color: #000;
     font-weight: 400;
     font-size:1.1em;
     margin-left: 10px;
@@ -63,7 +69,7 @@ html{
 }
 .header ul li a.active, 
 .header ul li a:hover{
-    border-bottom:2px solid red;
+    border-bottom:4px solid #1fe6ff;
 }
 .content{
     position:relative;
@@ -73,14 +79,14 @@ html{
     max-width:550px;
 }
 .content .mytext h2{
-    color:#000;
+    color:red;
     font-size:2em;
     margin-bottom: 10px;
     line-height: 1.2em;
     font-weight: 400;
 }
 .content .mytext h1{
-    color:red;
+    color:#1fe6ff;
     font-size:3em;
     margin-bottom: 10px;
     line-height: 1em;
@@ -89,24 +95,25 @@ html{
 .content .mytext p{
     font-size: 1.2em;
     max-width:600px;
-    color: #333;
+    color: #fff;
 }
 .content .mytext a{
     display: inline-block;
     margin-top: 20px;
     padding: 15px 30px;
-    background:#ff5e8e;
-    color:#fff;
-    font-size: 1.2em;
-    border-radius: 40px;
+    background:transparent;
+    border:3px solid #1fe6ff;
+    color:#1fe6ff;
+    font-size: 1em;
+    border-radius: 20px;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-decoration: none;
 } 
 
 .pic{
     position:absolute;
-    bottom:5%;
+    bottom:7%;
     right:10%;
     max-width:400px;
 }
@@ -128,17 +135,13 @@ html{
         bottom:0;
         opacity:0.7;
     }
-    .header .toggle{
+    .toggle i{
+        display:block;
         position:fixed;
-        top:20px;
+        top:30px;
         right:20px;
-        width:40px;
-        height:40px;
-        background:#0169b2 url(menu.jpg) no-repeat;
-        background-size: 30px;
-        background-position: center;
+        color:#1fe6ff;
         cursor: pointer;
-        border-radius: 2px;
         z-index: 10;
     }
     .toggle .active{
@@ -400,12 +403,12 @@ html{
     #Contact::before{
         width: 150px; 
         height:150px;
-        transform: translate(-130px,-280px);
+        transform: translate(-125px,-270px);
     }
     #Contact::after{
         width: 150px; 
         height:150px;
-        transform: translate(130px,280px);
+        transform: translate(125px,270px);
     }
     .containerCon{
         padding: 20px;
