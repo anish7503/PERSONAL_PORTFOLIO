@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'Baloo Bhai 2', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode' sans-serif;
+    /* font-family: 'Baloo Bhai 2', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode' sans-serif; */
+    font-family: 'Roboto', sans-serif;
+}
+:root{
+    /* --theme: #1fe6ff; */
+    /* --theme: #01fe87; */
+    --theme: teal;
 }
 
 body {
@@ -28,20 +35,29 @@ html {
 
 .header {
     position: fixed;
-    background-color: #fff;
     top: 0;
     left: 0;
     width: 100%;
+    height:50px;
     padding: 20px 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 10000;
+    overflow: hidden;
+    z-index: 100;
+
+    /* Glassy Look */
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 0.5px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(25px);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;    
 }
 
 .header .logo {
     position: relative;
-    color: #000;
+    color: #fff;
     display: inline-block;
     font-size: 1.5em;
     text-decoration: none;
@@ -49,11 +65,10 @@ html {
     opacity: 0;
     animation: slide_left 0.5s linear forwards;
     animation-delay: 0.2s;
-
 }
 
 header .logo span {
-    color: #1fe6ff;
+    color: var(--theme);
 }
 
 .header ul {
@@ -71,7 +86,7 @@ header .logo span {
 
 .header ul li a {
     display: inline-block;
-    color: #000;
+    color: #fff;
     font-weight: 400;
     font-size: 1.1em;
     margin-left: 10px;
@@ -85,7 +100,7 @@ header .logo span {
 
 .header ul li a.actives,
 .header ul li a:hover {
-    border-bottom: 3px solid #1fe6ff;
+    border-bottom: 3px solid var(--theme);
 }
 
 .content {
@@ -98,7 +113,7 @@ header .logo span {
 }
 
 .content .mytext h2 {
-    color: red;
+    color: #fff;
     font-size: 2em;
     margin-bottom: 10px;
     line-height: 1.2em;
@@ -109,7 +124,7 @@ header .logo span {
 }
 
 .content .mytext h1 {
-    color: #1fe6ff;
+    color: var(--theme);
     font-size: 3em;
     margin-bottom: 10px;
     line-height: 1em;
@@ -122,7 +137,7 @@ header .logo span {
 .content .mytext p {
     font-size: 1.2em;
     max-width: 600px;
-    color: #fff;
+    color: grey;
     opacity: 0;
     animation: emerge 0.5s linear forwards;
     animation-delay: 1s;
@@ -131,10 +146,10 @@ header .logo span {
 .content .mytext a {
     display: inline-block;
     margin-top: 20px;
-    padding: 15px 30px;
+    padding: 10px 15px;
     background: transparent;
-    border: 3px solid #1fe6ff;
-    color: #1fe6ff;
+    border: 2px solid var(--theme);
+    color: var(--theme);
     font-size: 1em;
     border-radius: 20px;
     font-weight: 700;
@@ -173,18 +188,17 @@ header .logo span {
     .pic {
         left: 0;
         bottom: 0;
-        opacity: 0.7;
         opacity: 0;
         animation: emerge 0.5s linear forwards;
         animation-delay: 1s;
     }
 
-    .toggle i {
+    #toggle i{
         display: block;
         position: fixed;
-        top: 30px;
+        top: 15px;
         right: 20px;
-        color: #1fe6ff;
+        color: var(--theme);
         cursor: pointer;
         z-index: 10;
         text-decoration: none;
@@ -261,16 +275,29 @@ header .logo span {
 /* .................................For Skills............................. */
 #Skills {
     display: flex;
-    justify-content: right;
-    align-items: center;
+    flex-direction: column;
     min-height: 100vh;
     background: #000;
+    padding: 50px 15px;
+}
+#skillt{
+    display: inline-block;
+}
+.container{
+    flex-direction: row;
+    padding:20px;
 }
 
-.containerSk {
+.container .knowledge{
+    position:relative;
+    display: inline-block;
+    width:45%;
+}
+.container .containerSk {
+    display: inline-block;
     position: relative;
-    width: 500px;
-    margin-right: 17%;
+    width: 45%;
+    padding-left: 20px;
 }
 
 .containerSk h2 {
@@ -344,29 +371,88 @@ header .logo span {
 }
 
 .containerSk .skills:nth-child(2) .Percent .progress {
-    background: linear-gradient(45deg, #1fe6ff, #673ab7);
+    background: linear-gradient(45deg, var(--theme), #681ee7);
 }
 
 .containerSk .skills:nth-child(3) .Percent .progress {
-    background: linear-gradient(45deg, #3bc0ff, #33ff00);
+    background: linear-gradient(45deg, var(--theme), #33ff00);
 }
 
 .containerSk .skills:nth-child(4) .Percent .progress {
-    background: linear-gradient(45deg, #ffee54, #ff00ca);
+    background: linear-gradient(45deg, var(--theme), #ff00ca);
 }
 
 .containerSk .skills:nth-child(5) .Percent .progress {
-    background: linear-gradient(45deg, #c1fb38, #2196f3);
+    background: linear-gradient(45deg, var(--theme), #fadd03);
 }
 
 .containerSk .skills:nth-child(6) .Percent .progress {
-    background: linear-gradient(45deg, #3cfff1, #c5070b);
+    background: linear-gradient(45deg, var(--theme), #c5070b);
 }
 
 @media (max-width: 768px) {
-    .containerSk {
-        width: 500px;
-        margin: 8%;
+    .container{
+        flex-direction: column;
+    }
+    .container .knowledge{
+        position:relative;
+        display: block;
+        width:100%;
+    }
+    .container .containerSk {
+        display: block;
+        position: relative;
+        width: 100%;
+        padding-left: 20px;
+    }
+}
+
+/* ..................................For project............................. */
+.project{
+    display:flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height:100vh;
+    background:#000;
+    padding-top:50px;
+}
+
+/* ..................................For About Me............................. */
+.about{
+    display:flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height:100vh;
+    background:#000;
+    padding-top:50px;
+}
+.paget{
+    position: relative;
+    font-size:3vw;
+    color:#282539;
+    -webkit-text-stroke: 0.2vw #383d52;
+    text-transform: uppercase;
+    margin:15px 20px;
+}
+.paget::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    color: var(--theme);
+    -webkit-text-stroke: 0vw #383d52;
+    border-right:2px solid var(--theme);
+    overflow: hidden;
+    animation: typing 4s linear infinite;
+}
+@keyframes typing{
+    0%,10%,100% {
+      width:0;  
+    }
+    70%,90%{
+        width:100%; 
     }
 }
 
@@ -376,7 +462,7 @@ header .logo span {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
+    padding: 80px 20px 0px 20px;
     width: 100%;
     background: #000;
 }
@@ -385,26 +471,26 @@ header .logo span {
     content: '';
     position: absolute;
     overflow: auto;
-    width: 400px;
-    height: 400px;
-    background: linear-gradient(#2196f3, #e91e63);
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(var(--theme), #e91e63);
     border-radius: 50%;
-    transform: translate(-470px, -200px);
+    transform: translate(-450px, -130px);
 }
 
 #Contact::after {
     content: '';
     position: absolute;
-    width: 400px;
-    height: 400px;
-    background: linear-gradient(#2196f3, #83d8ff);
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(var(--theme), #83d8ff);
     border-radius: 50%;
-    transform: translate(470px, 125px);
+    transform: translate(450px, 130px);
 }
 
 .containerCon {
     position: relative;
-    z-index: 1000;
+    z-index: 10;
     width: 100%;
     max-width: 1000px;
     padding: 50px;
@@ -422,6 +508,7 @@ header .logo span {
     content: '';
     position: absolute;
     left: -40%;
+    top:0;
     width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, 0.05);
@@ -565,11 +652,16 @@ header .logo span {
     width: 100%;
     height: 200px;
     margin: 0 auto;
-    background: #262626;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
     justify-content: center;
     align-items: center;
+
+    /* Glassy Look */
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 0.5px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(25px);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; 
 }
 
 .name {
@@ -664,6 +756,6 @@ header .logo span {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(#333a31, white, #333a31);
-    border-radius: 6px;
+    background: linear-gradient(var(--theme),grey,grey, var(--theme));
+    border-radius: 7px;
 }
