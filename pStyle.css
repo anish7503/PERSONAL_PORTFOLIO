@@ -113,7 +113,7 @@ header .logo span {
 }
 
 .content .mytext h2 {
-    color: #fff;
+    color: #33ff00;
     font-size: 2em;
     margin-bottom: 10px;
     line-height: 1.2em;
@@ -137,7 +137,7 @@ header .logo span {
 .content .mytext p {
     font-size: 1.2em;
     max-width: 600px;
-    color: grey;
+    color: #fff;
     opacity: 0;
     animation: emerge 0.5s linear forwards;
     animation-delay: 1s;
@@ -189,7 +189,7 @@ header .logo span {
         left: 0;
         bottom: 0;
         opacity: 0;
-        animation: emerge 0.5s linear forwards;
+        animation: emergeb 0.5s linear forwards;
         animation-delay: 1s;
     }
 
@@ -268,6 +268,16 @@ header .logo span {
 
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes emergeb {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.3;
     }
 }
 
@@ -415,6 +425,109 @@ header .logo span {
     min-height:100vh;
     background:#000;
     padding-top:50px;
+    flex-direction: column;
+    z-index: -200;
+}
+
+/* Setting Background */
+.projects{
+    /* setting flex type wrap */
+    display: flex;
+    flex-wrap: wrap;
+
+    /* Positioning all the containers at the centre of page */
+    justify-content: center;
+    align-items: center;
+
+    z-index:10;
+
+    /* Doubt */
+    min-width: 100vw;
+}
+
+.containerPr {
+    /* Setting up container */
+    background: #060c21;
+    width: 300px;
+    height: 400px;
+    margin: 40px;
+    color: #fff;
+    padding: 20px;
+    cursor: pointer;
+
+    /* Positioning box content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+
+    /* Doubt */
+    position: relative;
+}
+
+/* For lightening edge */
+.containerPr::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+
+    /* setting transition time */
+    transition: 0.5s;
+}
+
+/* For blur shade */
+.containerPr:after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+
+    /* providing blur effect */
+    filter: blur(40px);
+
+    /* setting transition time */
+    transition: 0.5s;
+}
+
+.containerPr:nth-child(1):before,
+.containerPr:nth-child(1):after {
+    background: linear-gradient(235deg, #89ff00, #010615, #00bcd4);
+}
+
+.containerPr:nth-child(2):before,
+.containerPr:nth-child(2):after {
+    background: linear-gradient(235deg, #ff005e, #010615, #fbff00);
+}
+
+.containerPr:nth-child(3):before,
+.containerPr:nth-child(3):after {
+    background: linear-gradient(235deg, #772aff, #010615, #04ec3e);
+}
+
+/* Scaling on hovering to make animation */
+.containerPr:hover:before{
+    transform: scale(1.05);
+}
+.containerPr:hover:after{
+    transform: scale(1.1);
+}
+
+/* Changing color of half container */
+.containerPr .glass {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, .1);
+    pointer-events: none;
 }
 
 /* ..................................For About Me............................. */
@@ -561,7 +674,7 @@ header .logo span {
 
 .containerCon .row100 .col .inputBox .text {
     position: absolute;
-    top: 0;
+    bottom: 4px;
     left: 0;
     line-height: 40px;
     font-size: 16px;
@@ -570,12 +683,19 @@ header .logo span {
     transition: 0.5s;
     pointer-events: none;
 }
+.containerCon .row100 .col .textarea{
+    min-height: 100px;
+}
 
 .containerCon .row100 .col .inputBox input:focus+.text,
-.containerCon .row100 .col .inputBox input:valid+.text,
+.containerCon .row100 .col .inputBox input:valid+.text{
+    bottom: 35px;
+    left: -10px;
+}
+
 .containerCon .row100 .col .inputBox textarea:focus+.text,
 .containerCon .row100 .col .inputBox textarea:valid+.text {
-    top: -35px;
+    bottom: 100px;
     left: -10px;
 }
 

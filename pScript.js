@@ -1,8 +1,11 @@
 // For toggle
-let menutoggle = document.querySelector("toggle");
-let active = document.querySelector("active");
 
-menutoggle.addEventListener('click', function(){
+let active = document.querySelector(".active"); 
+let menutoggle = document.getElementById("toggle");
+console.log(menutoggle)
+console.log(active);
+menutoggle.addEventListener('click',function(){
+    console.log("clicking");
     if(menutoggle.firstChild.classList.contains('fa-bars')){
         menutoggle.firstChild.classList.replace('fa-bars','fa-times');
     }
@@ -10,5 +13,4 @@ menutoggle.addEventListener('click', function(){
         menutoggle.firstChild.classList.replace('fa-times','fa-bars');
     }
     active.classList.toggle('active');
-}
-)
+})
