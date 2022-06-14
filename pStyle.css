@@ -146,7 +146,9 @@ header .logo span {
 .content .mytext a {
     display: inline-block;
     margin-top: 20px;
-    padding: 10px 15px;
+    width: 150px;
+    padding: 5px 15px;
+    text-align: center;
     background: transparent;
     border: 2px solid var(--theme);
     color: var(--theme);
@@ -537,7 +539,8 @@ header .logo span {
     align-items: flex-start;
     min-height:100vh;
     background:#000;
-    padding-top:50px;
+    padding-top:3rem;
+    flex-direction: column;
 }
 .paget{
     position: relative;
@@ -545,7 +548,7 @@ header .logo span {
     color:#282539;
     -webkit-text-stroke: 0.2vw #383d52;
     text-transform: uppercase;
-    margin:15px 20px;
+    margin:1rem 1.2rem;
 }
 .paget::before{
     content: attr(data-text);
@@ -569,13 +572,107 @@ header .logo span {
     }
 }
 
+.containerAb{
+    width: 100%;
+    height:36rem;
+    display:flex;
+    flex-direction: row;
+}
+.containerAb .picture{
+    border: 3px solid var(--theme);
+    width: 35%;
+    margin: 1.25rem;
+    border-radius: 10px;
+    background: url("image.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.containerAb .details{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+}
+.containerAb .details .info{
+    display: flex;
+    padding: 20px 20px;
+    width: 100%;
+    flex-direction: row;
+}
+.containerAb .details .info .col2{
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+}
+
+.heading{
+    text-align:left;
+    padding: 10px 20px;
+    font-size: 2rem;
+    border-bottom: 2px solid var(--theme);
+    width: 40%;
+    color:#fff;
+}
+.heading span{
+    color: var(--theme);
+}
+
+.containerAb .details .info h3{
+    font-size: 25px;
+    color:var(--theme);
+    font-weight: bold;
+    padding: 4px 10px;
+    text-transform: capitalize;
+}
+
+.containerAb .details .info h3 span{
+    color:#eee;
+    padding:0 0.5rem;
+    text-transform: capitalize;
+}
+
+.containerAb .pinfo a {
+    display: inline-block;
+    padding: 5px 20px;
+    margin-left: 10px;
+    background: transparent;
+    border: 2px solid var(--theme);
+    color: var(--theme);
+    font-size: 1em;
+    border-radius: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+@media(max-width:768px) {
+    .containerAb{
+        flex-direction: column;
+    }
+    .containerAb .picture{
+        min-width: 90%;
+        min-height: 70%;
+    }
+
+    .containerAb .details .info{
+        flex-direction: column;
+    }
+    .about{
+        min-height: 70rem;
+    }
+    .heading{
+        width:90%;
+    }
+}
+
+
 /* ...............................For Contact Page...................... */
 #Contact {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 80px 20px 0px 20px;
+    padding: 40px 20px 0px 20px;
     width: 100%;
     background: #000;
 }
@@ -588,7 +685,7 @@ header .logo span {
     height: 300px;
     background: linear-gradient(var(--theme), #e91e63);
     border-radius: 50%;
-    transform: translate(-450px, -130px);
+    transform: translate(-450px, -170px);
 }
 
 #Contact::after {
@@ -598,7 +695,7 @@ header .logo span {
     height: 300px;
     background: linear-gradient(var(--theme), #83d8ff);
     border-radius: 50%;
-    transform: translate(450px, 130px);
+    transform: translate(450px, 170px);
 }
 
 .containerCon {
@@ -871,7 +968,7 @@ header .logo span {
 
 /* .....................................Scroll Bar.............................. */
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 10px;
     background: #000;
 }
 
