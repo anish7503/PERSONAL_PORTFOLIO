@@ -182,7 +182,7 @@ header .logo span {
         padding: 20px;
     }
 
-    header .navbar {
+    .header .navbar {
         display: none;
         z-index: -10;
     }
@@ -207,22 +207,30 @@ header .logo span {
         animation: slide_top 0.5s linear forwards;
         animation-delay: calc(0.2s*var(--i));
     }
-
-    .navbar .active {
+    
+    .navbar.active{
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: #fff;
+        background: #000;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        opacity: 0;
+        animation: slide_left 0.2s linear forwards;
+        animation-delay: 0.2s;
     }
-
+    header.active{
+        height:100%;
+        display: flex;
+        flex-direction: column;
+    }
     .header ul li {
         margin: 10px 0;
+        display:block;
     }
 }
 
@@ -544,7 +552,7 @@ header .logo span {
 }
 .paget{
     position: relative;
-    font-size:3vw;
+    font-size:3rem;
     color:#282539;
     -webkit-text-stroke: 0.2vw #383d52;
     text-transform: uppercase;
@@ -594,7 +602,7 @@ header .logo span {
 }
 .containerAb .details .info{
     display: flex;
-    padding: 20px 20px;
+    padding: 20px 10px;
     width: 100%;
     flex-direction: row;
 }
@@ -617,7 +625,7 @@ header .logo span {
 }
 
 .containerAb .details .info h3{
-    font-size: 25px;
+    font-size: 22px;
     color:var(--theme);
     font-weight: bold;
     padding: 4px 10px;
@@ -656,12 +664,14 @@ header .logo span {
 
     .containerAb .details .info{
         flex-direction: column;
+        padding:20px 0px;
     }
     .about{
         min-height: 70rem;
     }
     .heading{
-        width:90%;
+        width:95%;
+        font-size: 1.5rem;
     }
 }
 

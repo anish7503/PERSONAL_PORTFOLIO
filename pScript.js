@@ -1,16 +1,21 @@
-// For toggle
+// For toggle button
+const toggle=document.querySelector(".tgbtn");
 
-let active = document.querySelector(".active"); 
-let menutoggle = document.getElementById("toggle");
-console.log(menutoggle)
-console.log(active);
-menutoggle.addEventListener('click',function(){
-    console.log("clicking");
-    if(menutoggle.firstChild.classList.contains('fa-bars')){
-        menutoggle.firstChild.classList.replace('fa-bars','fa-times');
+// for changing navigation
+const menutoggle = document.querySelector(".toggle");
+const navbar = document.querySelector(".navbar");
+const header = document.querySelector(".header");
+
+menutoggle.onclick = function(){
+    if(toggle.classList.contains('fa-bars')){
+        toggle.classList.replace('fa-bars','fa-times');
     }
     else{
-        menutoggle.firstChild.classList.replace('fa-times','fa-bars');
+        toggle.classList.replace('fa-times','fa-bars'); 
     }
-    active.classList.toggle('active');
-})
+
+    menutoggle.classList.toggle('active');
+    navbar.classList.toggle('active');
+    header.classList.toggle('active');
+}
+
