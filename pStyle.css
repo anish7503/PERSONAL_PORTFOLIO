@@ -223,6 +223,7 @@ header .logo span {
         animation: slide_left 0.2s linear forwards;
         animation-delay: 0.2s;
     }
+
     header.active{
         height:100%;
         display: flex;
@@ -474,6 +475,9 @@ header .logo span {
     /* Doubt */
     position: relative;
 }
+.containerPr p{
+    padding:20px 0;
+}
 
 /* For lightening edge */
 .containerPr::before {
@@ -539,17 +543,7 @@ header .logo span {
     background: rgba(255, 255, 255, .1);
     pointer-events: none;
 }
-
-/* ..................................For About Me............................. */
-.about{
-    display:flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    min-height:100vh;
-    background:#000;
-    padding-top:3rem;
-    flex-direction: column;
-}
+/* ...................................title.............................. */
 .paget{
     position: relative;
     font-size:3rem;
@@ -579,16 +573,28 @@ header .logo span {
         width:100%; 
     }
 }
+/* ..................................For About Me............................. */
+.about{
+    display:flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height:100%;
+    background:#000;
+    padding-top:3rem;
+    flex-direction: column;
+}
 
 .containerAb{
     width: 100%;
-    height:36rem;
+    min-height:30%;
     display:flex;
     flex-direction: row;
 }
 .containerAb .picture{
     border: 3px solid var(--theme);
+    display:relative;
     width: 35%;
+    height:30rem;
     margin: 1.25rem;
     border-radius: 10px;
     background: url("image.jpg") no-repeat center;
@@ -652,8 +658,44 @@ header .logo span {
     text-decoration: none;
     margin-bottom: 20px;
 }
+.containerAb .details .einfo{
+    display:flex;
+    flex-wrap: wrap;
+}
+.containerAb .details .einfo .info .col2{
+    border-left:2px solid var(--theme);
+    margin:10px 10px;
+    min-width:30%;
+}
+.containerAb .details .einfo .info .col2::before{
+    content:'';
+    position: absolute;
+    height:10px;
+    width: 10px;
+    border-radius: 50%;
+    background:var(--theme);
+    transform: translateX(-16px);
+}
+
+
+.containerAb .einfo .info .col2 .fas{
+    color:var(--theme);
+    padding:5px 10px;
+}
+.containerAb .einfo .info .col2 span{
+    color:white;
+    padding:5px 10px;
+}
+.containerAb .einfo .info .col2 p{
+    color:white;
+    padding:5px 10px;
+}
 
 @media(max-width:768px) {
+    .paget{
+        font-size: 2rem;
+    }
+
     .containerAb{
         flex-direction: column;
     }
@@ -672,6 +714,9 @@ header .logo span {
     .heading{
         width:95%;
         font-size: 1.5rem;
+    }
+    .contact{
+        margin:200px;
     }
 }
 
@@ -851,13 +896,13 @@ header .logo span {
     #Contact::before {
         width: 150px;
         height: 150px;
-        transform: translate(-123px, -270px);
+        transform: translate(-121px, -270px);
     }
 
     #Contact::after {
         width: 150px;
         height: 150px;
-        transform: translate(123px, 270px);
+        transform: translate(121px, 270px);
     }
 
     .containerCon {
