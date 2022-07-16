@@ -7,9 +7,9 @@
     font-family: 'Roboto', sans-serif;
 }
 :root{
-    /* --theme: #1fe6ff; */
+    --theme: #1fe6ff;
     /* --theme: #01fe87; */
-    --theme: teal;
+    /* --theme: teal; */
 }
 
 body {
@@ -152,10 +152,8 @@ header .logo span {
     background: transparent;
     border: 2px solid var(--theme);
     color: var(--theme);
-    font-size: 1em;
     border-radius: 20px;
     font-weight: 700;
-    letter-spacing: 1px;
     text-decoration: none;
     opacity: 0;
     animation: slide_top 0.5s linear forwards;
@@ -207,9 +205,11 @@ header .logo span {
         animation: slide_top 0.5s linear forwards;
         animation-delay: calc(0.2s*var(--i));
     }
-    
+    .toggle.active{
+        position:absolute;
+    }
     .navbar.active{
-        position: fixed;
+        position:absolute;
         top: 0;
         left: 0;
         width: 100%;
@@ -225,11 +225,13 @@ header .logo span {
     }
 
     header.active{
-        height:100%;
-        display: flex;
+        height:100vh;
+        
+        display: block;
         flex-direction: column;
     }
-    .header ul li {
+
+    .header ul li{
         margin: 10px 0;
         display:block;
     }
@@ -476,7 +478,7 @@ header .logo span {
     position: relative;
 }
 .containerPr p{
-    padding:20px 0;
+    padding:30px 0;
 }
 
 /* For lightening edge */
@@ -543,6 +545,30 @@ header .logo span {
     background: rgba(255, 255, 255, .1);
     pointer-events: none;
 }
+
+.but {
+    color: var(--theme);
+    border: 3px solid var(--theme);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0);
+    text-decoration: none;
+    font-size: 1 em;
+    letter-spacing: 0.1em;
+    padding: 5px 30px;
+    
+    /* position relative needed because of after and before */
+    position: relative;
+    /* setting transition time */
+    transition: 0.5s;
+}
+.but:hover {
+    letter-spacing: 0.25em;
+    /* for border */
+    border: 3px solid var(--theme);
+    /* for text */
+    color: var(--theme);
+    box-shadow: 0 0px 35px var(--theme);
+}
 /* ...................................title.............................. */
 .paget{
     position: relative;
@@ -560,7 +586,7 @@ header .logo span {
     width: 0%;
     height: 100%;
     color: var(--theme);
-    -webkit-text-stroke: 0vw #383d52;
+    -webkit-text-stroke: 0vw #000;
     border-right:2px solid var(--theme);
     overflow: hidden;
     animation: typing 4s linear infinite;
@@ -651,10 +677,8 @@ header .logo span {
     background: transparent;
     border: 2px solid var(--theme);
     color: var(--theme);
-    font-size: 1em;
     border-radius: 20px;
     font-weight: 700;
-    letter-spacing: 1px;
     text-decoration: none;
     margin-bottom: 20px;
 }
@@ -712,7 +736,7 @@ header .logo span {
         min-height: 70rem;
     }
     .heading{
-        width:95%;
+        width:80%;
         font-size: 1.5rem;
     }
     .contact{
@@ -740,7 +764,7 @@ header .logo span {
     height: 300px;
     background: linear-gradient(var(--theme), #e91e63);
     border-radius: 50%;
-    transform: translate(-450px, -170px);
+    transform: translate(-450px, -150px);
 }
 
 #Contact::after {
@@ -896,13 +920,13 @@ header .logo span {
     #Contact::before {
         width: 150px;
         height: 150px;
-        transform: translate(-121px, -270px);
+        transform: translate(-124px, -270px);
     }
 
     #Contact::after {
         width: 150px;
         height: 150px;
-        transform: translate(121px, 270px);
+        transform: translate(123px, 270px);
     }
 
     .containerCon {
